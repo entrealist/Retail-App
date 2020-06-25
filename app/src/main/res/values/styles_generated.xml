@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="bottom_navigation_active" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/bottom_navigation_active</item>
+		<item name="android:textColor">@color/bottom_navigation_active</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="bottom_navigation_inactive" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/bottom_navigation_inactive</item>
+		<item name="android:textColor">@color/bottom_navigation_inactive</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="title_h1" parent="TextAppearance.AppCompat">
+		<item name="android:textStyle">bold</item>
+		<item name="android:textSize">@dimen/title_h1</item>
+		<item name="android:textColor">@color/title_h1</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="title_h2" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/title_h2</item>
+		<item name="android:textColor">@color/title_h2</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="title_h3" parent="TextAppearance.AppCompat">
+		<item name="android:textStyle">bold</item>
+		<item name="android:textSize">@dimen/title_h3</item>
+		<item name="android:textColor">@color/title_h3</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="title_h4" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/title_h4</item>
+		<item name="android:textColor">@color/title_h4</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="title_h5" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:textSize">@dimen/title_h5</item>
+		<item name="android:textColor">@color/title_h5</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="title_header_and_alert" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:textSize">@dimen/title_header_and_alert</item>
+		<item name="android:textColor">@color/title_header_and_alert</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="title_profile_user_name" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:textSize">@dimen/title_profile_user_name</item>
+		<item name="android:textColor">@color/title_profile_user_name</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="link_regular" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:textSize">@dimen/link_regular</item>
+		<item name="android:textColor">@color/link_regular</item>
+		<item name="android:gravity">right</item>
+	</style>
+
+	<style name="link_main15px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/link_main15px_left</item>
+		<item name="android:textColor">@color/link_main15px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="link_main12px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/link_main12px_left</item>
+		<item name="android:textColor">@color/link_main12px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="link_additional15px_center" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/link_additional15px_center</item>
+		<item name="android:textColor">@color/link_additional15px_center</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="link_additional15px_right" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/link_additional15px_right</item>
+		<item name="android:textColor">@color/link_additional15px_right</item>
+		<item name="android:gravity">right</item>
+	</style>
+
+	<style name="form_label" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/form_label</item>
+		<item name="android:textColor">@color/form_label</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="form_placeholder" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/form_placeholder</item>
+		<item name="android:textColor">@color/form_placeholder</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="form_text_unable" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/form_text_unable</item>
+		<item name="android:textColor">@color/form_text_unable</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="form_text" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/form_text</item>
+		<item name="android:textColor">@color/form_text</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="form_text_main" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/form_text_main</item>
+		<item name="android:textColor">@color/form_text_main</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="form_label_main_page" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/form_label_main_page</item>
+		<item name="android:textColor">@color/form_label_main_page</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="form_placeholder_main_page" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/form_placeholder_main_page</item>
+		<item name="android:textColor">@color/form_placeholder_main_page</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="regular_text_regular16px_center" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/regular_text_regular16px_center</item>
+		<item name="android:textColor">@color/regular_text_regular16px_center</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="regular_text_medium15px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:textSize">@dimen/regular_text_medium15px_left</item>
+		<item name="android:textColor">@color/regular_text_medium15px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="regular_text_regular15px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/regular_text_regular15px_left</item>
+		<item name="android:textColor">@color/regular_text_regular15px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="regular_text_regular14px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/regular_text_regular14px_left</item>
+		<item name="android:textColor">@color/regular_text_regular14px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="regular_text_regular14px_center" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-light</item>
+		<item name="android:textSize">@dimen/regular_text_regular14px_center</item>
+		<item name="android:textColor">@color/regular_text_regular14px_center</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="regular_text_regular12px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/regular_text_regular12px_left</item>
+		<item name="android:textColor">@color/regular_text_regular12px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="info_text_regular16px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/info_text_regular16px_left</item>
+		<item name="android:textColor">@color/info_text_regular16px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="info_text_regular15px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/info_text_regular15px_left</item>
+		<item name="android:textColor">@color/info_text_regular15px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="info_text_regular13px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/info_text_regular13px_left</item>
+		<item name="android:textColor">@color/info_text_regular13px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="info_text_regular13px_center" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/info_text_regular13px_center</item>
+		<item name="android:textColor">@color/info_text_regular13px_center</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="info_text_regular12px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/info_text_regular12px_left</item>
+		<item name="android:textColor">@color/info_text_regular12px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="info_text_regular10px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/info_text_regular10px_left</item>
+		<item name="android:textColor">@color/info_text_regular10px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="additional_text_bold15px_center" parent="TextAppearance.AppCompat">
+		<item name="android:textStyle">bold</item>
+		<item name="android:textSize">@dimen/additional_text_bold15px_center</item>
+		<item name="android:textColor">@color/additional_text_bold15px_center</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="additional_text_regular15px_center" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/additional_text_regular15px_center</item>
+		<item name="android:textColor">@color/additional_text_regular15px_center</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="product_category_title" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:textSize">@dimen/product_category_title</item>
+		<item name="android:textColor">@color/product_category_title</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="product_category_text" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/product_category_text</item>
+		<item name="android:textColor">@color/product_category_text</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="button_big_main" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:textSize">@dimen/button_big_main</item>
+		<item name="android:textColor">@color/button_big_main</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="button_big_secondary" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:textSize">@dimen/button_big_secondary</item>
+		<item name="android:textColor">@color/button_big_secondary</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="button_middle_main" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:textSize">@dimen/button_middle_main</item>
+		<item name="android:textColor">@color/button_middle_main</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="button_middle_secondary" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:textSize">@dimen/button_middle_secondary</item>
+		<item name="android:textColor">@color/button_middle_secondary</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="price_product_page" parent="TextAppearance.AppCompat">
+		<item name="android:textStyle">bold</item>
+		<item name="android:textSize">@dimen/price_product_page</item>
+		<item name="android:textColor">@color/price_product_page</item>
+		<item name="android:gravity">right</item>
+	</style>
+
+	<style name="price_shopping_cart" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:textSize">@dimen/price_shopping_cart</item>
+		<item name="android:textColor">@color/price_shopping_cart</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="text_warning" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/text_warning</item>
+		<item name="android:textColor">@color/text_warning</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="title_profile_id" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-light</item>
+		<item name="android:textSize">@dimen/title_profile_id</item>
+		<item name="android:textColor">@color/title_profile_id</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="status_success" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/status_success</item>
+		<item name="android:textColor">@color/status_success</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="status_danger" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/status_danger</item>
+		<item name="android:textColor">@color/status_danger</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="status_warning" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/status_warning</item>
+		<item name="android:textColor">@color/status_warning</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="info_text_regular16px_center" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/info_text_regular16px_center</item>
+		<item name="android:textColor">@color/info_text_regular16px_center</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="additional_text_regular16px_center" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/additional_text_regular16px_center</item>
+		<item name="android:textColor">@color/additional_text_regular16px_center</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="regular_text_medium18px_center" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:textSize">@dimen/regular_text_medium18px_center</item>
+		<item name="android:textColor">@color/regular_text_medium18px_center</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="additional_text_regular14px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/additional_text_regular14px_left</item>
+		<item name="android:textColor">@color/additional_text_regular14px_left</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="additional_text_bold30px_left" parent="TextAppearance.AppCompat">
+		<item name="android:textStyle">bold</item>
+		<item name="android:textSize">@dimen/additional_text_bold30px_left</item>
+		<item name="android:textColor">@color/additional_text_bold30px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="regular_button_additional_regular15px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/regular_button_additional_regular15px_left</item>
+		<item name="android:textColor">@color/regular_button_additional_regular15px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="form_label_disabled_first_screen" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/form_label_disabled_first_screen</item>
+		<item name="android:textColor">@color/form_label_disabled_first_screen</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="form_text_disabled_first_screen" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/form_text_disabled_first_screen</item>
+		<item name="android:textColor">@color/form_text_disabled_first_screen</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="color_on_surface_button" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:textSize">@dimen/color_on_surface_button</item>
+		<item name="android:textColor">@color/color_on_surface_button</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="color_on_surface15px_center" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/color_on_surface15px_center</item>
+		<item name="android:textColor">@color/color_on_surface15px_center</item>
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="color_on_surface15px_right" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/color_on_surface15px_right</item>
+		<item name="android:textColor">@color/color_on_surface15px_right</item>
+		<item name="android:gravity">right</item>
+	</style>
+
+	<style name="form_label_error" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/form_label_error</item>
+		<item name="android:textColor">@color/form_label_error</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="form_label_error_first" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/form_label_error_first</item>
+		<item name="android:textColor">@color/form_label_error_first</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="form_text_error" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/form_text_error</item>
+		<item name="android:textColor">@color/form_text_error</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="form_text_error_first" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/form_text_error_first</item>
+		<item name="android:textColor">@color/form_text_error_first</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="regular_text_error12px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/regular_text_error12px_left</item>
+		<item name="android:textColor">@color/regular_text_error12px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+	<style name="regular_text_error_first12px_left" parent="TextAppearance.AppCompat">
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textSize">@dimen/regular_text_error_first12px_left</item>
+		<item name="android:textColor">@color/regular_text_error_first12px_left</item>
+		<item name="android:gravity">left</item>
+	</style>
+
+</resources>
+	

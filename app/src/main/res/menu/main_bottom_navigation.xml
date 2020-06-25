@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/categoriesGraph"
+        android:icon="@drawable/ic_add_circle_outline"
+        android:title="@string/title_categories" />
+    <item
+        android:id="@id/ordersGraph"
+        android:icon="@drawable/ic_reorder"
+        android:title="@string/title_orders" />
+    <item
+        android:id="@id/optionsGraph"
+        android:icon="@drawable/ic_more_horiz"
+        android:title="@string/title_options" />
+</menu>

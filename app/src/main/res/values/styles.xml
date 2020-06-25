@@ -1,0 +1,125 @@
+<resources>
+    <!--
+        Naming examples:
+        • Widget.BottomNavigationView - style for [BottomNavigationView] widget for [Application] context
+        • Widget,Button.Login - style for [Button] widget for [Login] context
+        • Widget.TextView.Login.Promo - style for [TextView] widget for [Login] context for [Promo] detail
+        • ThemeOverlay.Button.Orders - theme overlay for [Button] widget for [Orders] context
+        • TextAppearance.Caption.TextInputLayout.Login - [TextAppearance] of type [Caption] for [TextInputLayout] widget for [Login] context
+
+        To theme in scope of an individual style: define desired attributes in a separate style (theme overlay), that inherits from
+        ThemeOverlay.MaterialComponents (or specific one if available), and set it as android:theme in the original style.
+    -->
+
+    <style name="Widget.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.BottomNavigationView</item>
+    </style>
+
+    <style name="Widget.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Button</item>
+    </style>
+
+    <style name="Widget.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.TextButton</item>
+    </style>
+
+    <style name="Widget.TextButton.Icon" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:padding">@dimen/grid_1</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconTint">@color/iconTint_textButton_icon</item>
+    </style>
+
+    <style name="Widget.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.OutlinedButton</item>
+        <item name="strokeColor">@color/strokeColor_outlinedButton</item>
+    </style>
+
+    <style name="Widget.Switch" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Switch</item>
+    </style>
+
+    <style name="Widget.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.TextInputEditText</item>
+        <item name="errorEnabled">true</item>
+        <item name="boxBackgroundColor">@null</item>
+        <item name="hintTextColor">@color/hintTextColor_textInputLayout</item><!-- label color [focused] -->
+        <item name="android:textColorHint">@color/textColorHint_textInputLayout</item><!-- label color [unfocused] -->
+    </style>
+
+    <style name="Widget.TextInputEditText" parent="Widget.MaterialComponents.TextInputEditText.FilledBox.Dense">
+        <item name="android:textColor">@color/text_color__text_input_edit_text</item>
+    </style>
+
+    <style name="Widget.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Toolbar</item>
+    </style>
+
+    <style name="Widget.ProgressBar.Horizontal" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.ProgressBar.Horizontal</item>
+    </style>
+
+
+    <style name="Widget.MaterialAlertDialog.Title.Text" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="fontFamily">sans-serif-medium</item><!-- @style/title_header_and_alert -->
+        <item name="android:textSize">@dimen/textSize_alertDialog_title</item>
+        <item name="android:textColor">@color/textColor_alertDialog_title</item>
+    </style>
+    <style name="Widget.MaterialAlertDialog.Body.Text" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="fontFamily">sans-serif</item><!-- @style/info_text_regular16px_left -->
+        <item name="android:textSize">@dimen/textSize_alertDialog_body</item>
+        <item name="android:textColor">@color/textColor_alertDialog_body</item>
+    </style>
+    <style name="Widget.CheckedTextView" parent="Widget.MaterialComponents.CheckedTextView">
+        <item name="fontFamily">sans-serif</item><!-- @style/regular_text_medium15px_left -->
+        <item name="android:textSize">@dimen/regular_text_medium15px_left</item>
+        <item name="android:textColor">@color/regular_text_medium15px_left</item>
+    </style>
+
+
+    <!-- ProductFragment -->
+    <style name="Widget.TabLayout.Product" parent="Widget.MaterialComponents.TabLayout">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.TabLayout.Product</item>
+        <item name="tabPaddingEnd">@dimen/tabPadding_tabLayout_product</item>
+        <item name="tabPaddingStart">@dimen/tabPadding_tabLayout_product</item>
+        <item name="tabGravity">center</item>
+        <item name="tabBackground">@drawable/bg_tab_product</item>
+        <item name="tabIndicator">@drawable/bg_tab_indicator_product</item>
+        <item name="tabIndicatorGravity">center</item>
+    </style>
+
+
+    <!-- OrdersFragment -->
+    <style name="Widget.Button.Orders">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Button.Orders</item>
+    </style>
+
+
+    <!-- LoginFragment -->
+    <style name="Widget.Button.Login">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Button.Login</item>
+    </style>
+
+    <style name="Widget.TextButton.Login">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.TextButton.Login</item>
+    </style>
+
+    <style name="Widget.TextButton.Icon.Login">
+        <item name="iconTint">@color/iconTint_textButton_icon_login</item>
+    </style>
+
+    <style name="Widget.TextInputLayout.Login" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.TextInputEditText.Login</item>
+        <item name="errorEnabled">true</item>
+        <item name="hintTextColor">@color/hintTextColor_textInputLayout_login</item><!-- label color [focused] -->
+        <item name="android:textColorHint">@color/textColorHint_textInputLayout_login</item><!-- label color [unfocused] -->
+    </style>
+
+    <style name="Widget.TextInputEditText.Login">
+        <item name="android:textColor">@color/text_color__text_input_edit_text__login</item>
+    </style>
+
+</resources>

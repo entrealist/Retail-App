@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.main.options.profile.addresses.persist.PersistAddressFragment"
+    tools:ignore="ContentDescription">
+
+    <data>
+        <import type="com.drugstore.app.core.AppAdapters" />
+        <variable
+            name="model"
+            type="com.drugstore.app.main.options.profile.addresses.persist.PersistAddressVM" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/sv_persist_address"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:colorBackground"
+        android:scrollbars="none"
+        android:fillViewport="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_persist_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_persist_address_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1_5"
+                android:text="@string/persist_address_edit_info"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_persist_address_address_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                app:layout_goneMarginTop="@dimen/grid_3"
+                android:hint="@string/persist_address_label_address_type"
+                android:visibility="@{model.addressTypeVisibility, default=visible}"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_arrow_drop_down"
+                app:endIconTint="@color/ic_text_field"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_persist_address_info">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_persist_address_address_type"
+                    style="@style/Overlay.EditText.NoInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{model.areControlsEnabled}"
+                    android:onClick="@{() -> model.pickAddressType(context)}"
+                    android:text="@{AppAdapters.addressTypeName(context, model.addressType)}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_persist_address_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                app:layout_goneMarginTop="@dimen/grid_3"
+                android:hint="@string/persist_address_label_title"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_persist_address_address_type">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_persist_address_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{model.areControlsEnabled}"
+                    android:inputType="text"
+                    android:text="@={model.title}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_persist_address_first_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/persist_address_label_first_name"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_persist_address_title">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_persist_address_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{model.areControlsEnabled}"
+                    android:inputType="text"
+                    android:text="@={model.firstName}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_persist_address_last_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/persist_address_label_last_name"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_persist_address_first_name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_persist_address_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{model.areControlsEnabled}"
+                    android:inputType="text"
+                    android:text="@={model.lastName}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_persist_address_country_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/persist_address_label_country_name"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_persist_address_last_name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_persist_address_country_name"
+                    style="@style/Overlay.EditText.Disabled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.country.name}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_persist_address_postal_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/persist_address_label_postal_code"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_persist_address_country_name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_persist_address_postal_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{model.areControlsEnabled}"
+                    android:inputType="number"
+                    android:text="@={model.postalCode}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_persist_address_city"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/persist_address_label_city"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_persist_address_postal_code">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_persist_address_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{model.areControlsEnabled}"
+                    android:inputType="text"
+                    android:text="@={model.city}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_persist_address_street"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/persist_address_label_street"
+                android:visibility="@{model.inputsForRegularVisibility, default=visible}"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_persist_address_city">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_persist_address_street"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{model.areControlsEnabled}"
+                    android:inputType="text"
+                    android:text="@={model.street}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_persist_address_house_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/persist_address_label_house_number"
+                android:visibility="@{model.inputsForRegularVisibility, default=visible}"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_persist_address_street">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_persist_address_house_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{model.areControlsEnabled}"
+                    android:inputType="number"
+                    android:text="@={model.houseNumber}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_persist_address_company_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/persist_address_label_company_name"
+                android:visibility="@{model.inputsForRegularVisibility, default=visible}"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_persist_address_house_number">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_persist_address_company_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{model.areControlsEnabled}"
+                    android:inputType="text"
+                    android:text="@={model.companyName}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_persist_address_packstation_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/persist_address_label_packstation_address"
+                android:visibility="@{model.inputsForDhlPackstationVisibility, default=visible}"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_persist_address_company_name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_persist_address_packstation_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{model.areControlsEnabled}"
+                    android:inputType="number"
+                    android:text="@={model.packstationAddress}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_persist_address_packstation_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/persist_address_label_packstation_number"
+                android:visibility="@{model.inputsForDhlPackstationVisibility, default=visible}"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_persist_address_packstation_address">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_persist_address_packstation_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{model.areControlsEnabled}"
+                    android:inputType="number"
+                    android:text="@={model.packstationNumber}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_persist_address_phone_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/persist_address_label_phone_number"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_persist_address_packstation_number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_persist_address_phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{model.areControlsEnabled}"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:text="@={model.phoneNumber}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_persist_address_submit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top_button"
+                android:enabled="@{model.areControlsEnabled}"
+                android:onClick="@{() -> model.submit()}"
+                android:text="@string/persist_address_add_submit"
+                app:layout_constraintWidth_percent="@dimen/width_percent_button"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintBottom_toTopOf="@id/btn_persist_address_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_persist_address_phone_number"/>
+
+            <include
+                android:id="@+id/v_persist_address_loading_indicator"
+                layout="@layout/template_loading_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:isVisible="@{model.isLoadingIndicatorVisible()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_persist_address_submit"
+                app:layout_constraintEnd_toEndOf="@id/gl_persist_address_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_persist_address_content_start"/>
+
+            <Button
+                android:id="@+id/btn_persist_address_cancel"
+                style="?borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_bottom_button"
+                android:text="@string/all_cancel"
+                android:onClick="@{() -> model.cancel()}"
+                app:layout_constraintWidth_percent="@dimen/width_percent_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_persist_address_submit"/>
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_persist_address_content_end"
+                style="@style/Guideline.Vertical"
+                app:layout_constraintGuide_percent="@dimen/guide_percent_form_end"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_persist_address_content_start"
+                style="@style/Guideline.Vertical"
+                app:layout_constraintGuide_percent="@dimen/guide_percent_form_start"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

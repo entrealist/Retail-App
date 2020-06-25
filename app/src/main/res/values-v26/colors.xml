@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        <WHAT>_<WHERE>_<DESCRIPTION>
+        <WHAT>: fg (foreground), bg (background), ic (icon), textColor (text color), special theme color names
+        <WHERE>: widget name - button, switch, textInputLayout, etc.
+        <DESCRIPTION>: context name (categories), detail name (image), state name (disabled)
+
+        Naming examples:
+        • fg_categories_image: <WHAT> - fg (foreground), <WHERE> - (not specified), <DESCRIPTION> - categories context, image detail
+        • colorPrimary_button_profile_menu: <WHAT> - colorPrimary, <WHERE> - button, <DESCRIPTION> - profile context, menu detail
+    -->
+
+    <!-- Other -->
+    <color name="navigationBarColor_light">@android:color/transparent</color>
+</resources>

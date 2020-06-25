@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.main.options.profile.ProfileFragment"
+    tools:ignore="UnusedAttribute,ContentDescription">
+
+    <data>
+        <import type="com.drugstore.app.main.options.profile.AdaptersKt" />
+        <variable
+            name="model"
+            type="com.drugstore.app.main.options.profile.ProfileVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_profile_info"
+        android:elevation="@dimen/grid_0_5">
+
+        <ImageView
+            android:id="@+id/iv_profile_avatar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/grid_4"
+            android:src="@drawable/ic_account_circle"
+            android:tint="@color/ic_profile_avatar_placeholder"
+            app:layout_constraintWidth_percent="@dimen/width_percent_profile_avatar"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@id/tv_profile_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/tv_profile_name"
+            style="@style/title_profile_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_1"
+            android:text="@{AdaptersKt.name(model.user)}"
+            tools:text="Johan Rumpelstilzchen"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@id/tv_profile_label_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_profile_avatar"/>
+        <TextView
+            android:id="@+id/tv_profile_label_id"
+            style="@style/title_profile_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/grid_4"
+            android:layout_marginEnd="@dimen/grid_0_5"
+            android:layout_marginTop="@dimen/grid_0_5"
+            android:text="@string/profile_label_id"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_profile_id"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_profile_name"/>
+        <TextView
+            android:id="@+id/tv_profile_id"
+            style="@style/regular_text_regular14px_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(model.user.uuid)}"
+            tools:text="6841"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_profile_label_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_profile_label_id"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

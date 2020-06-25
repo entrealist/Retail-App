@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.main.options.settings.regions.RegionFragment"
+    tools:ignore="ContentDescription">
+
+    <data>
+        <import type="com.kasprov.android.core.BooleanKt" />
+        <import type="com.drugstore.app.main.options.settings.region.AdaptersKt" />
+        <variable
+            name="item"
+            type="com.drugstore.domain.entity.Region" />
+        <variable
+            name="model"
+            type="com.drugstore.app.main.options.settings.region.RegionVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/grid_2"
+        android:paddingStart="@dimen/grid_2"
+        android:background="?selectableItemBackground"
+        android:onClick="@{() -> model.selectRegion(item)}">
+
+        <TextView
+            android:id="@+id/tv_region_name"
+            style="@style/regular_text_regular15px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_2"
+            android:text="@{AdaptersKt.regionName(context, item.name, item.id.equals(model.selectedRegionId))}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_region_selected"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="English" />
+
+        <ImageView
+            android:id="@+id/iv_region_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_check"
+            android:tint="@color/ic_region_selected"
+            android:visibility="@{BooleanKt.visibleElseGone(item.id.equals(model.selectedRegionId))}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

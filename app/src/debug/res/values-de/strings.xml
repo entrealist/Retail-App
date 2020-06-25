@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Common -->
+    <string name="all_cancel">TEST Cancel</string>
+    <string name="all_delete">TEST Delete</string>
+    <string name="all_load">TEST Load</string>
+    <string name="all_retry">TEST Retry</string>
+
+    <!-- Gender -->
+    <string name="gender_male">TEST Male</string>
+    <string name="gender_female">TEST Female</string>
+
+    <!-- AddressType -->
+    <string name="address_type_regular">TEST Personal</string>
+    <string name="address_type_dhl_packstation">TEST DHL Packstation</string>
+
+    <!-- Destination Labels -->
+    <string name="label_categories">TEST New order</string>
+    <string name="label_products">TEST {title}</string>
+    <string name="label_product">TEST {title}</string>
+    <string name="label_orders">TEST Reorder</string>
+    <string name="label_options">TEST More</string>
+    <string name="label_profile">TEST Profile</string>
+    <string name="label_edit_profile">TEST Profile details</string>
+    <string name="label_addresses">TEST Delivery address</string>
+    <string name="label_persist_address">TEST Delivery address</string>
+    <string name="label_change_password">TEST Change password</string>
+    <string name="label_settings">TEST Settings</string>
+    <string name="label_notifications">TEST Notifications</string>
+    <string name="label_region">TEST Location</string>
+    <string name="label_biometric">TEST Biometric</string>
+    <string name="label_contact_us">TEST Contact Us</string>
+    <string name="label_recover_password">TEST Forgot password</string>
+    <string name="label_register">TEST Registration</string>
+
+    <!-- Menu titles -->
+    <string name="title_categories">@string/label_categories</string>
+    <string name="title_orders">@string/label_orders</string>
+    <string name="title_options">@string/label_options</string>
+
+    <!-- Message -->
+    <string name="message_invalid_operation_output_message">TEST Server returned invalid response</string>
+    <string name="message_connect_exception_message">TEST Failed to connect to server</string>
+    <string name="message_unknown_host_exception_message">TEST Server could not be reached</string>
+    <string name="message_socket_timeout_exception_message">TEST Request timeout. Please check your internet connection</string>
+    <string name="message_exception_button">@android:string/ok</string>
+
+
+    <!-- CategoriesFragment -->
+    <string name="categories_retry_update_categories_title">TEST Loading categories has failed. Please try again.</string>
+    <string name="categories_retry_update_categories_action">@string/all_load</string>
+
+    <!-- ProductsFragment -->
+    <string name="products_retry_update_products_title">TEST Loading products has failed. Please try again.</string>
+    <string name="products_retry_update_products_action">@string/all_load</string>
+
+    <!-- ProductFragment -->
+    <string name="product_shipping">TEST Free shipping</string>
+    <string name="product_label_product_one">TEST Dosage</string>
+    <string name="product_label_product_two">TEST Quantity</string>
+    <string name="product_order">TEST Start consultation</string>
+
+
+    <!-- OrdersFragment -->
+    <string name="orders_retry_update_orders_title">TEST Loading your orders has failed. Please try again.</string>
+    <string name="orders_retry_update_orders_action">@string/all_load</string>
+    <string name="order_format_order_quantity">TEST (%s)</string>
+    <string name="order_label_order_id">TEST Order number:</string>
+    <string name="order_label_order_date_time">TEST Ordered:</string>
+    <string name="order_label_status">TEST Status:</string>
+    <string name="order_label_shipping_date_time">TEST Sent on:</string>
+    <string name="order_label_shipping_id">TEST Shipment number:</string>
+    <string name="order_reorder_same">TEST Reorder</string>
+    <string name="order_reorder_other">TEST Select new dosage</string>
+
+
+    <!-- OptionsFragment -->
+    <string name="options_label_profile">@string/label_profile</string>
+    <string name="options_label_settings">@string/label_settings</string>
+    <string name="options_label_terms_and_conditions">TEST Terms and Conditions</string>
+    <string name="options_label_privacy_policy">TEST Privacy Policy</string>
+    <string name="options_label_contact_us">@string/label_contact_us</string>
+    <string name="options_label_logout">TEST Log Out</string>
+
+    <!-- ProfileFragment -->
+    <string name="profile_label_id">TEST ID</string>
+    <string name="profile_label_medical_record">TEST Medical record</string>
+    <string name="profile_label_addresses">TEST Delivery address</string>
+    <string name="profile_label_change_password">TEST Change password</string>
+
+    <!-- EditProfileFragment -->
+    <string name="edit_profile_info">TEST Here you can view and update your data</string>
+    <string name="edit_profile_warning">TEST If you want to change your name/e-mail address, please contact our customer service.</string>
+    <string name="edit_profile_label_first_name">TEST First name</string>
+    <string name="edit_profile_label_last_name">TEST Last name</string>
+    <string name="edit_profile_label_email">TEST E-mail address</string>
+    <string name="edit_profile_label_birthday_date">TEST Date of birth</string>
+    <string name="edit_profile_label_gender">TEST Gender</string>
+    <string name="edit_profile_submit">TEST Save</string>
+    <string name="edit_profile_message_success_button">@android:string/ok</string>
+
+    <!-- AddressesFragment -->
+    <string name="addresses_empty_addresses_title">TEST You haven\'t added any address</string>
+    <string name="addresses_empty_addresses_action">TEST Add new address</string>
+    <string name="addresses_retry_update_addresses_title">TEST Loading addresses has failed. Please try again.</string>
+    <string name="addresses_retry_update_addresses_action">@string/all_load</string>
+    <string name="addresses_add_address">TEST Add new address</string>
+    <string name="address_street_dhl_packstation">TEST Packstation</string>
+
+    <!-- PersistAddressFragment -->
+    <string name="persist_address_edit_info">TEST Please note that a change of address only applies to the future orders.</string>
+    <string name="persist_address_label_address_type">TEST Address type</string>
+    <string name="persist_address_label_title">TEST Address name</string>
+    <string name="persist_address_label_first_name">TEST First name</string>
+    <string name="persist_address_label_last_name">TEST Last name</string>
+    <string name="persist_address_label_country_name">TEST Country</string>
+    <string name="persist_address_label_postal_code">TEST Postal code</string>
+    <string name="persist_address_label_city">TEST City</string>
+    <string name="persist_address_label_street">TEST Street</string>
+    <string name="persist_address_label_house_number">TEST House number</string>
+    <string name="persist_address_label_company_name">TEST Company name (optional)</string>
+    <string name="persist_address_label_packstation_address">TEST Packstation address</string>
+    <string name="persist_address_label_packstation_number">TEST Packstation number</string>
+    <string name="persist_address_label_phone_number">TEST Your phone number</string>
+    <string name="persist_address_add_submit">TEST Add address</string>
+    <string name="persist_address_edit_submit">TEST Save address</string>
+    <string name="persist_address_message_success_button">@android:string/ok</string>
+
+    <!-- ChangePasswordFragment -->
+    <string name="change_password_label_current_password">TEST Old password</string>
+    <string name="change_password_label_new_password">TEST New password</string>
+    <string name="change_password_label_repeated_new_password">TEST Repeat new password</string>
+    <string name="change_password_submit">TEST Change password</string>
+    <string name="change_password_message_success_title">TEST Password has changed</string>
+    <string name="change_password_message_success_button">TEST Go shopping</string>
+
+    <!-- SettingsFragment -->
+    <string name="settings_label_notifications">TEST Notification</string>
+    <string name="settings_label_region">TEST Location</string>
+    <string name="settings_label_biometric">TEST Biometric</string>
+    <string name="settings_biometric_disabled">TEST Disabled</string>
+    <string name="settings_biometric_enabled">TEST Enabled</string>
+
+    <!-- NotificationsFragment -->
+    <string name="notifications_label_email">TEST E-mail</string>
+    <string name="notifications_label_push">TEST Push notifications</string>
+    <string name="notifications_label_sms">TEST SMS</string>
+
+    <!-- RegionFragment -->
+    <string name="region_submit">TEST Save</string>
+
+    <!-- BiometricFragment -->
+    <string name="biometric_title_disabled">TEST Enter your password</string>
+    <string name="biometric_title_enabled">TEST Biometric authentication is enabled</string>
+    <string name="biometric_disabled_info">TEST Enter your password in order to enable biometric authentication</string>
+    <string name="biometric_disabled_label_password">TEST Password</string>
+    <string name="biometric_disabled_enable">TEST Make enable</string>
+    <string name="biometric_enabled_disable">TEST Disable</string>
+    <string name="biometric_biometric_title">TEST Confirm to check out</string>
+    <string name="biometric_biometric_negative_button">@string/all_cancel</string>
+
+    <!-- ContactUsFragment -->
+    <string name="contact_us_label_title">TEST Write to our support team</string>
+    <string name="contact_us_label_info">TEST Please note: our support team can not answer any questions about your health</string>
+    <string name="contact_us_label_email">TEST E-mail address</string>
+    <string name="contact_us_label_name">TEST Your name</string>
+    <string name="contact_us_label_order_number">TEST Order number (optional)</string>
+    <string name="contact_us_label_details">TEST Please give details</string>
+    <string name="contact_us_submit">TEST Send</string>
+    <string name="contact_us_message_success_button">@android:string/ok</string>
+    <string name="contact_us_retry_update_contact_details_title">TEST Loading contact details has failed. Please try again.</string>
+    <string name="contact_us_retry_update_contact_details_action">@string/all_load</string>
+
+
+    <!-- LoginFragment -->
+    <string name="login_promo">TEST Medical consultation, convenient and safe for more than <b>10.000 customers</b></string>
+    <string name="login_label_email">TEST E-mail address</string>
+    <string name="login_label_password">TEST Password</string>
+    <string name="login_recover_password">TEST Forgot password?</string>
+    <string name="login_login">TEST Log in</string>
+    <string name="login_register">TEST Create new account</string>
+    <string name="login_biometric_title">TEST Confirm to check out</string>
+    <string name="login_biometric_negative_button">@string/all_cancel</string>
+
+    <!-- SelectRegionFragment -->
+    <string name="select_region_title">TEST Select your location</string>
+    <string name="select_region_retry_update_regions_title">TEST Loading locations has failed. Please try again.</string>
+    <string name="select_region_retry_update_regions_action">@string/all_load</string>
+
+    <!-- RecoverPasswordFragment -->
+    <string name="recover_password_label_email">TEST E-mail address</string>
+    <string name="recover_password_label_info">TEST Please enter the e-mail address you have entered. You will then receive an e-mail from us with a link to reset your password.</string>
+    <string name="recover_password_submit">TEST Send</string>
+    <string name="recover_password_message_success_title">TEST Reset password</string>
+    <string name="recover_password_message_success_button">TEST OK, got it</string>
+
+    <!-- RegisterFragment -->
+    <string name="register_label_email">TEST E-mail address</string>
+    <string name="register_label_first_name">TEST First name</string>
+    <string name="register_label_last_name">TEST Last name</string>
+    <string name="register_label_password">TEST Password</string>
+    <string name="register_label_repeated_password">TEST Repeat password</string>
+    <string name="register_label_birthday_date">TEST Date of birth</string>
+    <string name="register_label_gender">TEST Gender</string>
+    <string name="register_register">TEST Sign in</string>
+    <string name="register_retry_update_user_consent_title">TEST Loading data has failed. Please try again.</string>
+    <string name="register_retry_update_user_consent_action">@string/all_load</string>
+</resources>

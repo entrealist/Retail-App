@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Colors -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <!-- Other theme colors -->
+        <item name="colorControlHighlight">@color/colorControlHighlight</item><!-- ripple color (applied at 50% opacity on API 23+) -->
+        <item name="android:textColorLink">@color/textColorLink</item>
+
+        <!-- Widget styles -->
+        <item name="borderlessButtonStyle">@style/Widget.TextButton</item>
+        <item name="borderlessIconButtonStyle">@style/Widget.TextButton.Icon</item>
+        <item name="bottomNavigationStyle">@style/Widget.BottomNavigationView</item>
+        <item name="materialButtonStyle">@style/Widget.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.OutlinedButton</item>
+        <item name="switchStyle">@style/Widget.Switch</item>
+        <item name="textInputStyle">@style/Widget.TextInputLayout</item>
+        <item name="toolbarStyle">@style/Widget.Toolbar</item>
+        <item name="android:progressBarStyleHorizontal">@style/Widget.ProgressBar.Horizontal</item>
+
+        <!-- Dialog themes -->
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialAlertDialog</item>
+
+        <!-- Shape styles -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MediumComponent</item>
+
+        <!-- Other -->
+        <item name="android:enforceStatusBarContrast" tools:targetApi="29">false</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="29">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Theme.Launch">
+        <item name="android:windowBackground">@drawable/bg_launch</item>
+    </style>
+
+    <style name="ThemeOverlay.BottomNavigationView" parent="ThemeOverlay.MaterialComponents">
+        <item name="colorPrimary">@color/colorPrimary_bottomNavigationView</item><!-- icon and text color [checked] -->
+        <item name="colorSurface">@color/colorSurface_bottomNavigationView</item><!-- background color -->
+        <item name="colorOnSurface">@color/colorOnSurface_bottomNavigationView</item><!-- applied at 60% opacity as icon and text color [unchecked] -->
+        <item name="textAppearanceCaption">@style/TextAppearance.Caption.BottomNavigationView</item>
+    </style>
+
+    <style name="ThemeOverlay.Button" parent="ThemeOverlay.MaterialComponents">
+        <item name="colorPrimary">@color/colorPrimary_button</item><!-- background color -->
+        <item name="colorOnPrimary">@color/colorOnPrimary_button</item><!-- text and ripple colors -->
+        <item name="colorOnSurface">@color/colorOnSurface_button</item><!-- text and background [disabled] -->
+        <item name="textAppearanceButton">@style/TextAppearance.Button.Button</item>
+    </style>
+
+    <style name="ThemeOverlay.TextButton" parent="ThemeOverlay.MaterialComponents">
+        <item name="colorPrimary">@color/colorPrimary_textButton</item><!-- text and ripple colors -->
+        <item name="textAppearanceButton">@style/TextAppearance.Button.TextButton</item>
+    </style>
+
+    <style name="ThemeOverlay.OutlinedButton" parent="ThemeOverlay.MaterialComponents">
+        <item name="colorPrimary">@color/colorPrimary_outlinedButton</item><!-- text and ripple colors -->
+        <item name="textAppearanceButton">@style/TextAppearance.Button.OutlinedButton</item>
+    </style>
+
+    <style name="ThemeOverlay.Switch" parent="ThemeOverlay.MaterialComponents">
+        <item name="colorControlActivated">@color/colorControlActivated_switch</item>
+        <item name="colorSurface">@color/colorSurface_switch</item>
+        <item name="colorOnSurface">@color/colorOnSurface_switch</item><!-- applied at 32% opacity as background color [disabled] -->
+    </style>
+
+    <style name="ThemeOverlay.TextInputEditText" parent="ThemeOverlay.MaterialComponents.TextInputEditText.FilledBox.Dense">
+        <item name="colorPrimary">@color/colorPrimary_textInputLayout</item><!-- label, underline and cursor colors [focused] -->
+        <item name="colorSurface">@android:color/transparent</item><!-- background color -->
+        <item name="colorError">@color/colorError_textInputLayout</item>
+        <item name="colorOnSurface">@color/colorOnSurface_textInputLayout</item><!-- underline [unfocused] and on-surface [any] colors -->
+        <item name="editTextStyle">@style/Widget.TextInputEditText</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Subtitle1.TextInputLayout</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Caption.TextInputLayout</item>
+    </style>
+
+    <style name="ThemeOverlay.Toolbar" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <item name="colorPrimary">@color/colorPrimary_toolbar</item><!-- background color -->
+        <item name="colorOnPrimary">@color/colorOnPrimary_toolbar</item><!-- text, icons color -->
+        <item name="colorControlNormal">@color/colorControlNormal_toolbar</item><!-- `Up` and `More` icons color -->
+        <item name="iconTint">@color/iconTint_toolbar</item><!-- options menu icons color -->
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Headline6.Toolbar</item>
+    </style>
+
+    <style name="ThemeOverlay.ProgressBar.Horizontal" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/colorAccent_progressBar_horizontal</item>
+    </style>
+
+    <style name="ThemeOverlay.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorPrimary">@color/colorPrimary_alertDialog</item>
+        <item name="colorSurface">@color/colorSurface_alertDialog</item>
+        <item name="colorControlNormal">@color/colorControlNormal_alertDialog</item>
+        <item name="colorControlActivated">@color/colorControlActivated_alertDialog</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Button.TextButton</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/Widget.MaterialAlertDialog.Title.Text</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/Widget.MaterialAlertDialog.Body.Text</item>
+        <item name="android:checkedTextViewStyle">@style/Widget.CheckedTextView</item>
+    </style>
+
+    <style name="ThemeOverlay.Dialog.DatePicker" parent="ThemeOverlay.MaterialComponents.Dialog">
+        <item name="colorPrimary">@color/colorPrimary_datePickerDialog</item>
+        <item name="colorAccent">@color/colorAccent_datePickerDialog</item>
+    </style>
+
+
+    <!-- ProductFragment -->
+    <style name="ThemeOverlay.TabLayout.Product" parent="ThemeOverlay.MaterialComponents">
+        <item name="colorPrimary">@color/colorPrimary_tabLayout_product</item>
+        <item name="colorSurface">@android:color/transparent</item>
+    </style>
+
+
+    <!-- OrdersFragment -->
+    <style name="ThemeOverlay.Orders" parent="ThemeOverlay.MaterialComponents">
+        <item name="materialButtonStyle">@style/Widget.Button.Orders</item>
+    </style>
+
+    <style name="ThemeOverlay.Button.Orders">
+        <item name="textAppearanceButton">@style/TextAppearance.Button.Button.Orders</item>
+    </style>
+
+
+    <!-- LoginFragment -->
+    <style name="ThemeOverlay.Login" parent="ThemeOverlay.MaterialComponents">
+        <item name="borderlessButtonStyle">@style/Widget.TextButton.Login</item>
+        <item name="borderlessIconButtonStyle">@style/Widget.TextButton.Icon.Login</item>
+        <item name="materialButtonStyle">@style/Widget.Button.Login</item>
+        <item name="textInputStyle">@style/Widget.TextInputLayout.Login</item>
+    </style>
+
+    <style name="ThemeOverlay.Button.Login">
+        <item name="colorPrimary">@color/colorPrimary_button_login</item><!-- background color -->
+        <item name="colorOnPrimary">@color/colorOnPrimary_button_login</item><!-- text and ripple colors -->
+        <item name="colorOnSurface">@color/colorOnSurface_button_login</item><!-- text and background [disabled] -->
+        <item name="textAppearanceButton">@style/TextAppearance.Button.Button.Login</item>
+    </style>
+
+    <style name="ThemeOverlay.TextButton.Login">
+        <item name="colorPrimary">@color/colorPrimary_textButton_login</item><!-- text and ripple colors -->
+        <item name="colorOnSurface">@color/colorOnSurface_textButton_login</item><!-- text [disabled] -->
+        <item name="textAppearanceButton">@style/TextAppearance.Button.TextButton.Login</item>
+    </style>
+
+    <style name="ThemeOverlay.TextInputEditText.Login">
+        <item name="colorPrimary">@color/colorPrimary_textInputLayout_login</item><!-- label, underline and cursor colors [focused] -->
+        <item name="colorSurface">@android:color/transparent</item><!-- background color -->
+        <item name="colorError">@color/colorError_textInputLayout_login</item>
+        <item name="colorOnSurface">@color/colorOnSurface_textInputLayout_login</item><!-- underline [unfocused] and on-surface [any] colors -->
+        <item name="editTextStyle">@style/Widget.TextInputEditText.Login</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Subtitle1.TextInputLayout.Login</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Caption.TextInputLayout.Login</item>
+    </style>
+
+</resources>

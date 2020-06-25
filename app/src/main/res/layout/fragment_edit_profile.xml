@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.main.options.profile.editprofile.EditProfileFragment"
+    tools:ignore="ContentDescription">
+
+    <data>
+        <import type="com.drugstore.app.core.AppAdapters" />
+        <variable
+            name="model"
+            type="com.drugstore.app.main.options.profile.editprofile.EditProfileVM" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sv_edit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:colorBackground"
+        android:scrollbars="none"
+        android:fillViewport="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_edit_profile_info"
+                style="@style/regular_text_regular12px_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1_5"
+                android:text="@string/edit_profile_info"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintEnd_toEndOf="@id/gl_edit_profile_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_edit_profile_content_start"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_edit_profile_warning"
+                style="@style/text_warning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_0_5"
+                android:text="@string/edit_profile_warning"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintEnd_toEndOf="@id/gl_edit_profile_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_edit_profile_content_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_edit_profile_info" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_edit_profile_first_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1_5"
+                android:hint="@string/edit_profile_label_first_name"
+                app:layout_constraintEnd_toEndOf="@id/gl_edit_profile_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_edit_profile_content_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_edit_profile_warning">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_edit_profile_first_name"
+                    style="@style/Overlay.EditText.Disabled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.user.firstName}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_edit_profile_last_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/edit_profile_label_last_name"
+                app:layout_constraintEnd_toEndOf="@id/gl_edit_profile_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_edit_profile_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_edit_profile_first_name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_edit_profile_last_name"
+                    style="@style/Overlay.EditText.Disabled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.user.lastName}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_edit_profile_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/edit_profile_label_email"
+                app:layout_constraintEnd_toEndOf="@id/gl_edit_profile_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_edit_profile_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_edit_profile_last_name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_edit_profile_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{model.areControlsEnabled}"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:text="@={model.email}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_edit_profile_birthday_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/edit_profile_label_birthday_date"
+                app:layout_constraintEnd_toEndOf="@id/gl_edit_profile_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_edit_profile_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_edit_profile_email">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_edit_profile_birthday_date"
+                    style="@style/Overlay.EditText.Disabled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{AppAdapters.date1(model.user.birthdayDate)}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_edit_profile_gender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/grid_1"
+                android:hint="@string/edit_profile_label_gender"
+                app:layout_constraintEnd_toEndOf="@id/gl_edit_profile_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_edit_profile_content_start"
+                app:layout_constraintTop_toBottomOf="@id/til_edit_profile_birthday_date">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_edit_profile_gender"
+                    style="@style/Overlay.EditText.Disabled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{AppAdapters.genderName(context, model.user.gender)}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_edit_profile_submit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top_button"
+                android:enabled="@{model.areControlsEnabled}"
+                android:text="@string/edit_profile_submit"
+                android:onClick="@{() -> model.submit()}"
+                app:layout_constraintWidth_percent="@dimen/width_percent_button"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintBottom_toTopOf="@id/btn_edit_profile_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_edit_profile_gender"/>
+
+            <Button
+                android:id="@+id/btn_edit_profile_cancel"
+                style="?borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_bottom_button"
+                android:text="@string/all_cancel"
+                android:onClick="@{() -> model.cancel()}"
+                app:layout_constraintWidth_percent="@dimen/width_percent_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_edit_profile_submit"/>
+
+            <include
+                android:id="@+id/v_edit_profile_loading_indicator"
+                layout="@layout/template_loading_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:isVisible="@{model.isLoadingIndicatorVisible()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_edit_profile_submit"
+                app:layout_constraintEnd_toEndOf="@id/gl_edit_profile_content_end"
+                app:layout_constraintStart_toStartOf="@id/gl_edit_profile_content_start"/>
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_edit_profile_content_end"
+                style="@style/Guideline.Vertical"
+                app:layout_constraintGuide_percent="@dimen/guide_percent_form_end"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_edit_profile_content_start"
+                style="@style/Guideline.Vertical"
+                app:layout_constraintGuide_percent="@dimen/guide_percent_form_start"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

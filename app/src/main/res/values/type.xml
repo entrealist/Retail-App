@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.Headline6.Toolbar" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">sans-serif-medium</item><!-- @style/title_header_and_alert -->
+        <item name="android:textSize">@dimen/textSize_toolbar_headline6</item>
+    </style>
+
+    <style name="TextAppearance.Subtitle1.TextInputLayout" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">sans-serif</item><!-- @style/form_text, @style/form_label -->
+        <item name="android:textSize">@dimen/textSize_textInputLayout_subtitle1</item>
+    </style>
+
+    <style name="TextAppearance.Subtitle1.TextInputLayout.Login">
+        <item name="fontFamily">sans-serif</item><!-- @style/form_text_main, @style/form_label_main_page -->
+        <item name="android:textSize">@dimen/textSize_textInputLayout_subtitle1_login</item>
+    </style>
+
+    <style name="TextAppearance.Button.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">sans-serif-medium</item><!-- @style/button_big_main -->
+        <item name="android:textSize">@dimen/textSize_button</item>
+    </style>
+
+    <style name="TextAppearance.Button.TextButton" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">sans-serif-medium</item><!-- @style/link_regular -->
+        <item name="android:textSize">@dimen/textSize_textButton</item>
+    </style>
+
+    <style name="TextAppearance.Button.OutlinedButton" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">sans-serif-medium</item><!-- @style/button_middle_secondary -->
+        <item name="android:textSize">@dimen/textSize_outlinedButton</item>
+    </style>
+
+    <style name="TextAppearance.Button.Button.Orders">
+        <item name="fontFamily">sans-serif-medium</item><!-- @style/button_middle_main -->
+        <item name="android:textSize">@dimen/textSize_button_orders</item>
+    </style>
+
+    <style name="TextAppearance.Button.Button.Login">
+        <item name="fontFamily">sans-serif-medium</item><!-- @style/button_big_secondary -->
+        <item name="android:textSize">@dimen/textSize_button_login</item>
+    </style>
+
+    <style name="TextAppearance.Button.TextButton.Login">
+        <item name="fontFamily">sans-serif-medium</item><!-- @style/link_additional15px_center -->
+        <item name="android:textSize">@dimen/textSize_textButton_login</item>
+    </style>
+
+    <style name="TextAppearance.Caption.BottomNavigationView" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">sans-serif</item><!-- @style/bottom_navigation_active, @style/bottom_navigation_inactive -->
+        <item name="android:textSize">@dimen/textSize_bottomNavigationView</item>
+    </style>
+
+    <style name="TextAppearance.Caption.TextInputLayout" parent="TextAppearance.MaterialComponents.Caption">
+        <!-- Setting fontFamily here won't have any effect since it'll be overridden by fontFamily of the EditText. -->
+        <item name="android:textSize">@dimen/textSize_textInputLayout_caption</item>
+    </style>
+
+    <style name="TextAppearance.Caption.TextInputLayout.Login">
+        <!-- Setting fontFamily here won't have any effect since it'll be overridden by fontFamily of the EditText. -->
+        <item name="android:textSize">@dimen/textSize_textInputLayout_caption_login</item>
+    </style>
+
+</resources>

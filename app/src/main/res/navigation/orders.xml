@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ordersGraph"
+    app:startDestination="@id/orders"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/orders"
+        android:name="com.drugstore.app.main.orders.OrdersFragment"
+        android:label="@string/label_orders"
+        tools:layout="@layout/fragment_orders" />
+
+
+    <!-- Core Destinations -->
+    <action
+        android:id="@+id/action_to_message"
+        app:destination="@id/message"
+        app:popUpTo="@id/message"
+        app:popUpToInclusive="true" />
+    <dialog
+        android:id="@+id/message"
+        android:name="com.drugstore.app.core.dialog.MessageDialogFragment">
+        <argument
+            android:name="titleResId"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="message"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="messageResId"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="buttonTextResId"
+            app:argType="reference" />
+        <argument
+            android:name="requestKey"
+            android:defaultValue="any"
+            app:argType="string" />
+        <argument
+            android:name="cancelable"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </dialog>
+
+    <action
+        android:id="@+id/action_to_pickDate"
+        app:destination="@id/pickDate"
+        app:popUpTo="@id/pickDate"
+        app:popUpToInclusive="true" />
+    <dialog
+        android:id="@+id/pickDate"
+        android:name="com.drugstore.app.core.dialog.PickDateDialogFragment">
+        <argument
+            android:name="requestKey"
+            app:argType="string" />
+        <argument
+            android:name="initialDate"
+            app:argType="org.threeten.bp.LocalDate" />
+    </dialog>
+
+    <action
+        android:id="@+id/action_to_pickItem"
+        app:destination="@id/pickItem"
+        app:popUpTo="@id/pickItem"
+        app:popUpToInclusive="true" />
+    <dialog
+        android:id="@+id/pickItem"
+        android:name="com.drugstore.app.core.dialog.PickItemDialogFragment">
+        <argument
+            android:name="ids"
+            app:argType="integer[]" />
+        <argument
+            android:name="checkedItemId"
+            app:argType="integer" />
+        <argument
+            android:name="labels"
+            app:argType="string[]" />
+        <argument
+            android:name="requestKey"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="titleResId"
+            android:defaultValue="0"
+            app:argType="reference" />
+    </dialog>
+
+    <action
+        android:id="@+id/action_to_webView"
+        app:destination="@id/webView"
+        app:popUpTo="@id/webView"
+        app:popUpToInclusive="true" />
+    <activity
+        android:id="@+id/webView"
+        android:name="com.drugstore.app.webview.WebViewActivity"
+        android:label="@string/label_none">
+        <argument
+            android:name="request"
+            app:argType="com.drugstore.data.repository.entity.Request" />
+    </activity>
+</navigation>

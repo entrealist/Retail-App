@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/optionsGraph"
+    app:startDestination="@id/options"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/options"
+        android:name="com.drugstore.app.main.options.OptionsFragment"
+        android:label="@string/label_options"
+        tools:layout="@layout/fragment_options">
+        <action
+            android:id="@+id/action_options_to_profile"
+            app:destination="@id/profile"
+            app:enterAnim="@anim/fragment_enter_anim"
+            app:exitAnim="@animator/fragment_exit_anim"
+            app:popEnterAnim="@animator/fragment_pop_enter_anim"
+            app:popExitAnim="@anim/fragment_pop_exit_anim" />
+        <action
+            android:id="@+id/action_options_to_settings"
+            app:destination="@id/settings"
+            app:enterAnim="@anim/fragment_enter_anim"
+            app:exitAnim="@animator/fragment_exit_anim"
+            app:popEnterAnim="@animator/fragment_pop_enter_anim"
+            app:popExitAnim="@anim/fragment_pop_exit_anim" />
+        <action
+            android:id="@+id/action_options_to_contactUs"
+            app:destination="@id/contactUs"
+            app:enterAnim="@anim/fragment_enter_anim"
+            app:exitAnim="@animator/fragment_exit_anim"
+            app:popEnterAnim="@animator/fragment_pop_enter_anim"
+            app:popExitAnim="@anim/fragment_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.drugstore.app.main.options.profile.ProfileFragment"
+        android:label="@string/label_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profile_to_addresses"
+            app:destination="@id/addresses"
+            app:enterAnim="@anim/fragment_enter_anim"
+            app:exitAnim="@animator/fragment_exit_anim"
+            app:popEnterAnim="@animator/fragment_pop_enter_anim"
+            app:popExitAnim="@anim/fragment_pop_exit_anim" />
+        <action
+            android:id="@+id/action_profile_to_changePassword"
+            app:destination="@id/changePassword"
+            app:enterAnim="@anim/fragment_enter_anim"
+            app:exitAnim="@animator/fragment_exit_anim"
+            app:popEnterAnim="@animator/fragment_pop_enter_anim"
+            app:popExitAnim="@anim/fragment_pop_exit_anim" />
+    </fragment>
+    <action
+        android:id="@+id/action_edit_profile_done"
+        app:popUpTo="@id/editProfile"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/editProfile"
+        android:name="com.drugstore.app.main.options.profile.editprofile.EditProfileFragment"
+        android:label="@string/label_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/addresses"
+        android:name="com.drugstore.app.main.options.profile.addresses.AddressesFragment"
+        android:label="@string/label_addresses"
+        tools:layout="@layout/fragment_addresses">
+        <action
+            android:id="@+id/action_addresses_to_persistAddress"
+            app:destination="@id/persistAddress"
+            app:enterAnim="@anim/fragment_enter_anim"
+            app:exitAnim="@animator/fragment_exit_anim"
+            app:popEnterAnim="@animator/fragment_pop_enter_anim"
+            app:popExitAnim="@anim/fragment_pop_exit_anim" />
+    </fragment>
+    <action
+        android:id="@+id/action_persist_address_done"
+        app:popUpTo="@id/persistAddress"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/persistAddress"
+        android:name="com.drugstore.app.main.options.profile.addresses.persist.PersistAddressFragment"
+        android:label="@string/label_persist_address"
+        tools:layout="@layout/fragment_persist_address">
+        <argument
+            android:name="addressId"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <action
+        android:id="@+id/action_change_password_done"
+        app:popUpTo="@id/changePassword"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/changePassword"
+        android:name="com.drugstore.app.main.options.profile.changepassword.ChangePasswordFragment"
+        android:label="@string/label_change_password"
+        tools:layout="@layout/fragment_change_password" />
+
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.drugstore.app.main.options.settings.SettingsFragment"
+        android:label="@string/label_settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settings_to_notifications"
+            app:destination="@id/notifications"
+            app:enterAnim="@anim/fragment_enter_anim"
+            app:exitAnim="@animator/fragment_exit_anim"
+            app:popEnterAnim="@animator/fragment_pop_enter_anim"
+            app:popExitAnim="@anim/fragment_pop_exit_anim" />
+        <action
+            android:id="@+id/action_settings_to_region"
+            app:destination="@id/region"
+            app:enterAnim="@anim/fragment_enter_anim"
+            app:exitAnim="@animator/fragment_exit_anim"
+            app:popEnterAnim="@animator/fragment_pop_enter_anim"
+            app:popExitAnim="@anim/fragment_pop_exit_anim" />
+        <action
+            android:id="@+id/action_settings_to_biometric"
+            app:destination="@id/biometric"
+            app:enterAnim="@anim/fragment_enter_anim"
+            app:exitAnim="@animator/fragment_exit_anim"
+            app:popEnterAnim="@animator/fragment_pop_enter_anim"
+            app:popExitAnim="@anim/fragment_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/notifications"
+        android:name="com.drugstore.app.main.options.settings.notificaitons.NotificationsFragment"
+        android:label="@string/label_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/region"
+        android:name="com.drugstore.app.main.options.settings.region.RegionFragment"
+        android:label="@string/label_region"
+        tools:layout="@layout/fragment_region" />
+    <fragment
+        android:id="@+id/biometric"
+        android:name="com.drugstore.app.main.options.settings.biometric.BiometricFragment"
+        android:label="@string/label_biometric"
+        tools:layout="@layout/fragment_biometric" />
+
+    <action
+        android:id="@+id/action_contact_us_done"
+        app:popUpTo="@id/contactUs"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/contactUs"
+        android:name="com.drugstore.app.main.options.contactus.ContactUsFragment"
+        android:label="@string/label_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
+
+
+    <!-- Core Destinations -->
+    <action
+        android:id="@+id/action_to_message"
+        app:destination="@id/message"
+        app:popUpTo="@id/message"
+        app:popUpToInclusive="true" />
+    <dialog
+        android:id="@+id/message"
+        android:name="com.drugstore.app.core.dialog.MessageDialogFragment">
+        <argument
+            android:name="titleResId"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="message"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="messageResId"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="buttonTextResId"
+            app:argType="reference" />
+        <argument
+            android:name="requestKey"
+            android:defaultValue="any"
+            app:argType="string" />
+        <argument
+            android:name="cancelable"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </dialog>
+
+    <action
+        android:id="@+id/action_to_pickDate"
+        app:destination="@id/pickDate"
+        app:popUpTo="@id/pickDate"
+        app:popUpToInclusive="true" />
+    <dialog
+        android:id="@+id/pickDate"
+        android:name="com.drugstore.app.core.dialog.PickDateDialogFragment">
+        <argument
+            android:name="requestKey"
+            app:argType="string" />
+        <argument
+            android:name="initialDate"
+            app:argType="org.threeten.bp.LocalDate" />
+    </dialog>
+
+    <action
+        android:id="@+id/action_to_pickItem"
+        app:destination="@id/pickItem"
+        app:popUpTo="@id/pickItem"
+        app:popUpToInclusive="true" />
+    <dialog
+        android:id="@+id/pickItem"
+        android:name="com.drugstore.app.core.dialog.PickItemDialogFragment">
+        <argument
+            android:name="ids"
+            app:argType="integer[]" />
+        <argument
+            android:name="checkedItemId"
+            app:argType="integer" />
+        <argument
+            android:name="labels"
+            app:argType="string[]" />
+        <argument
+            android:name="requestKey"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="titleResId"
+            android:defaultValue="0"
+            app:argType="reference" />
+    </dialog>
+
+    <action
+        android:id="@+id/action_to_webView"
+        app:destination="@id/webView"
+        app:popUpTo="@id/webView"
+        app:popUpToInclusive="true" />
+    <activity
+        android:id="@+id/webView"
+        android:name="com.drugstore.app.webview.WebViewActivity"
+        android:label="@string/label_none">
+        <argument
+            android:name="request"
+            app:argType="com.drugstore.data.repository.entity.Request" />
+    </activity>
+</navigation>

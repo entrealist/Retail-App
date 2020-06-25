@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.main.options.settings.SettingsFragment"
+    tools:ignore="ContentDescription">
+
+    <data>
+        <import type="com.kasprov.android.core.BooleanKt" />
+        <variable
+            name="model"
+            type="com.drugstore.app.main.options.settings.SettingsVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:colorBackground">
+
+        <include
+            android:id="@+id/v_settings_notifications"
+            layout="@layout/template_menu_item"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_settings_item"
+            android:layout_marginTop="@dimen/grid_1"
+            app:icon="@{@drawable/ic_notifications}"
+            app:iconTint="@{@color/ic_settings_item}"
+            app:title="@{@string/settings_label_notifications}"
+            app:onClick="@{() -> model.notifications()}"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/v_settings_region"
+            layout="@layout/template_menu_item"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_settings_item"
+            android:layout_marginTop="@dimen/grid_1"
+            app:icon="@{@drawable/ic_translate}"
+            app:iconTint="@{@color/ic_settings_item}"
+            app:title="@{@string/settings_label_region}"
+            app:subtitle="@{model.regionName}"
+            app:onClick="@{() -> model.region()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_settings_notifications" />
+
+        <include
+            android:id="@+id/v_settings_biometric"
+            layout="@layout/template_menu_item"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_settings_item"
+            android:layout_marginTop="@dimen/grid_1"
+            app:icon="@{@drawable/ic_biometric}"
+            app:iconTint="@{@color/ic_settings_item}"
+            app:title="@{@string/settings_label_biometric}"
+            app:onClick="@{() -> model.biometric()}"
+            android:visibility="@{BooleanKt.visibleElseGone(model.isBiometricAvailable())}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_settings_region" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

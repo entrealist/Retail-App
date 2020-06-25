@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Helper">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="Guideline.Vertical" parent="Helper">
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="Guideline.Horizontal" parent="Helper">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Overlay.EditText.NoInput" parent="">
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:longClickable">false</item>
+        <item name="android:cursorVisible">false</item>
+        <item name="android:inputType">none|textNoSuggestions</item>
+    </style>
+    <style name="Overlay.EditText.Disabled" parent="">
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:enabled">false</item>
+        <item name="android:inputType">none|textNoSuggestions</item>
+    </style>
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.main.options.profile.ProfileFragment"
+    tools:ignore="ContentDescription">
+
+    <data>
+        <variable
+            name="model"
+            type="com.drugstore.app.main.options.profile.ProfileVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:colorBackground">
+
+        <include
+            android:id="@+id/v_profile_info"
+            layout="@layout/view_profile_info"
+            app:model="@{model}" />
+
+        <include
+            android:id="@+id/v_profile_medical_record"
+            layout="@layout/template_profile_item"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_profile_item"
+            android:layout_marginTop="@dimen/grid_1"
+            app:icon="@{@drawable/ic_assignment_ind}"
+            app:title="@{@string/profile_label_medical_record}"
+            app:onClick="@{() -> model.medicalRecord()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_profile_info" />
+
+        <include
+            android:id="@+id/v_profile_addresses"
+            layout="@layout/template_profile_item"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_profile_item"
+            android:layout_marginTop="@dimen/grid_1"
+            app:icon="@{@drawable/ic_home}"
+            app:title="@{@string/profile_label_addresses}"
+            app:onClick="@{() -> model.addresses()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_profile_medical_record" />
+
+        <include
+            android:id="@+id/v_profile_change_password"
+            layout="@layout/template_profile_item"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_profile_item"
+            android:layout_marginTop="@dimen/grid_1"
+            app:icon="@{@drawable/ic_lock}"
+            app:title="@{@string/profile_label_change_password}"
+            app:onClick="@{() -> model.changePassword()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_profile_addresses" />
+
+        <include
+            android:id="@+id/v_profile_loading_indicator"
+            layout="@layout/template_loading_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:isVisible="@{model.isLoadingIndicatorVisible()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

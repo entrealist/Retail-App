@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="ContentDescription">
+
+    <data>
+        <import type="com.kasprov.android.core.BooleanKt" />
+        <variable
+            name="icon"
+            type="android.graphics.drawable.Drawable" />
+        <variable
+            name="iconTint"
+            type="android.content.res.ColorStateList" />
+        <variable
+            name="title"
+            type="String" />
+        <variable
+            name="subtitle"
+            type="String" />
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:onClick="@{onClick}">
+
+        <ImageView
+            android:id="@+id/iv_menu_item_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_2"
+            android:src="@{icon}"
+            android:tint="@{iconTint}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_settings" />
+
+        <TextView
+            android:id="@+id/tv_menu_item_title"
+            style="@style/regular_text_medium15px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_3"
+            android:text="@{title}"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@id/tv_menu_item_subtitle"
+            app:layout_constraintStart_toEndOf="@id/iv_menu_item_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/tv_menu_item_subtitle"
+            style="@style/info_text_regular13px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_3"
+            android:text="@{subtitle}"
+            android:visibility="@{BooleanKt.goneElseVisible(tvMenuItemSubtitle.text == null)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_menu_item_icon"
+            app:layout_constraintTop_toBottomOf="@id/tv_menu_item_title"
+            tools:text="Subtitle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

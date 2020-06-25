@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.main.options.contactus.ContactUsFragment"
+    tools:ignore="ContentDescription">
+
+    <data>
+        <import type="com.drugstore.app.main.options.contactus.AdaptersKt" />
+        <variable
+            name="item"
+            type="com.drugstore.domain.entity.ContactDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/grid_1_5"
+        android:paddingTop="@dimen/grid_1_5"
+        android:onClick="@{() -> AdaptersKt.triggerClickableSpan(tvContactUsContactDetail)}">
+
+        <ImageView
+            android:id="@+id/iv_contact_us_contact_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@{AdaptersKt.contactDetailTypeIcon(context, item.type)}"
+            android:tint="@color/ic_contact_us_contact_detail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_contact_us_contact_detail"
+            tools:src="@drawable/ic_location_on" />
+
+        <TextView
+            android:id="@+id/tv_contact_us_contact_detail"
+            style="@style/regular_text_regular14px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_3"
+            android:text="@{AdaptersKt.data(item.data, item.type)}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_contact_us_contact_detail"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Sky Marketing Ltd. (Doctorabc)\n298 Romford Road,\nE7 9HD Londod, United Kingdom" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

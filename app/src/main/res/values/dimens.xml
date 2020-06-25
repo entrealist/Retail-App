@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        <WHAT>_<WHERE>_<DESCRIPTION>
+        <WHAT>: textSize, size, width, height, width_percent, height_percent, guide_percent, etc.
+        <WHERE>: widget name - button, switch, textInputLayout, etc.
+        <DESCRIPTION>: context name (login, profile), detail name (avatar, promo), state name (disabled)
+    -->
+
+    <!-- For margin and padding use dimensions that are multiple of 8dp, in very rare occasions resort to multiple of 4dp -->
+    <dimen name="grid_0_5">4dp</dimen>
+    <dimen name="grid_1">8dp</dimen>
+    <dimen name="grid_1_5">12dp</dimen>
+    <dimen name="grid_2">16dp</dimen>
+    <dimen name="grid_2_5">20dp</dimen>
+    <dimen name="grid_3">24dp</dimen>
+    <dimen name="grid_4">32dp</dimen>
+    <dimen name="grid_6">48dp</dimen>
+    <dimen name="grid_7">56dp</dimen>
+
+    <!-- Sizes -->
+    <dimen name="size_1">1dp</dimen>
+
+    <!-- Widget styles -->
+    <!-- BottomNavigationView -->
+    <dimen name="textSize_bottomNavigationView">@dimen/bottom_navigation_active</dimen>
+    <!-- Button -->
+    <dimen name="textSize_button">@dimen/button_big_main</dimen>
+    <!-- TextButton -->
+    <dimen name="textSize_textButton">@dimen/link_regular</dimen>
+    <!-- OutlinedButton -->
+    <dimen name="textSize_outlinedButton">@dimen/button_middle_secondary</dimen>
+    <!-- TextInputLayout -->
+    <dimen name="textSize_textInputLayout_subtitle1">@dimen/form_text</dimen>
+    <dimen name="textSize_textInputLayout_caption">@dimen/form_label</dimen>
+    <!-- Toolbar -->
+    <dimen name="textSize_toolbar_headline6">@dimen/title_header_and_alert</dimen>
+
+    <!-- Dialog themes -->
+    <!-- AlertDialog -->
+    <dimen name="textSize_alertDialog_title">@dimen/title_header_and_alert</dimen>
+    <dimen name="textSize_alertDialog_body">@dimen/info_text_regular16px_left</dimen>
+
+    <!-- Shape styles -->
+    <dimen name="cornerSize_smallComponent">2dp</dimen>
+    <dimen name="cornerSize_mediumComponent">2dp</dimen>
+
+    <!-- Other -->
+    <dimen name="width_percent_button">0.75</dimen>
+    <dimen name="margin_top_button">16dp</dimen>
+    <dimen name="margin_bottom_button">16dp</dimen>
+    <dimen name="guide_percent_form_end">0.95</dimen>
+    <dimen name="guide_percent_form_start">0.05</dimen>
+
+
+    <!-- ProductsFragment -->
+    <dimen name="width_percent_products_image">0.178</dimen>
+
+    <!-- ProductFragment -->
+    <dimen name="radius_tab_product">1.5dp</dimen>
+    <dimen name="radius_tab_indicator_product">2.5dp</dimen>
+    <dimen name="diameter_tab_indicator_product">5dp</dimen>
+    <dimen name="tabPadding_tabLayout_product">5.5dp</dimen><!-- = tab background width + desired padding -->
+
+
+    <!-- OrdersFragment -->
+    <dimen name="guide_percent_orders_first_column">0.33</dimen>
+    <dimen name="textSize_button_orders">@dimen/button_middle_main</dimen>
+
+
+    <!-- OptionsFragment -->
+    <dimen name="height_options_item">@dimen/grid_6</dimen>
+
+    <!-- ProfileFragment -->
+    <dimen name="width_percent_profile_avatar">0.2</dimen>
+    <dimen name="height_profile_item">@dimen/grid_6</dimen>
+
+    <!-- AddressesFragment -->
+    <dimen name="height_addresses_add_address">@dimen/grid_7</dimen>
+
+    <!-- SettingsFragment -->
+    <dimen name="height_settings_item">@dimen/grid_7</dimen>
+
+    <!-- NotificationsFragment -->
+    <dimen name="height_notifications_item">@dimen/grid_7</dimen>
+
+
+    <!-- LoginFragment -->
+    <!-- LoginFragment Button -->
+    <dimen name="textSize_button_login">@dimen/button_big_secondary</dimen>
+    <!-- LoginFragment TextButton -->
+    <dimen name="textSize_textButton_login">@dimen/link_additional15px_center</dimen>
+    <!-- LoginFragment TextInputLayout -->
+    <dimen name="textSize_textInputLayout_subtitle1_login">@dimen/form_text_main</dimen>
+    <dimen name="textSize_textInputLayout_caption_login">@dimen/form_label_main_page</dimen>
+</resources>

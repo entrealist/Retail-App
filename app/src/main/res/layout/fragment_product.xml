@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.main.categories.products.product.ProductFragment"
+    tools:ignore="ContentDescription">
+
+    <data>
+        <import type="com.drugstore.app.main.categories.products.product.AdaptersKt" />
+        <variable
+            name="model"
+            type="com.drugstore.app.main.categories.products.product.ProductVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_product_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:colorBackground">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_product"
+            style="@style/Widget.TabLayout.Product"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/tv_product_price"
+            app:layout_constraintEnd_toEndOf="@id/gl_product_content_end"
+            app:layout_constraintStart_toStartOf="@id/gl_product_content_start"/>
+
+        <ImageView
+            android:id="@+id/iv_product_shipping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_0_5"
+            android:src="@drawable/ic_local_shipping"
+            android:tint="@color/ic_product_shipping"
+            app:layout_constraintBottom_toBottomOf="@id/tv_product_price"
+            app:layout_constraintStart_toStartOf="@id/gl_product_content_start"
+            app:layout_constraintTop_toTopOf="@id/tv_product_price"/>
+
+        <TextView
+            android:id="@+id/tv_product_shipping"
+            style="@style/info_text_regular10px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_1"
+            android:text="@string/product_shipping"
+            app:layout_constraintBottom_toBottomOf="@id/tv_product_price"
+            app:layout_constraintStart_toEndOf="@id/iv_product_shipping"
+            app:layout_constraintTop_toTopOf="@id/tv_product_price"/>
+
+        <TextView
+            android:id="@+id/tv_product_price"
+            style="@style/price_product_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/grid_3"
+            android:text="@{model.productTwo.priceString}"
+            app:layout_constraintBottom_toTopOf="@id/til_product_product_one"
+            app:layout_constraintEnd_toEndOf="@id/gl_product_content_end"
+            tools:text="€35.90" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_product_product_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/grid_1"
+            android:hint="@string/product_label_product_one"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_arrow_drop_down"
+            app:endIconTint="@color/ic_text_field"
+            app:layout_constraintBottom_toTopOf="@id/til_product_product_two"
+            app:layout_constraintEnd_toEndOf="@id/gl_product_content_end"
+            app:layout_constraintStart_toStartOf="@id/gl_product_content_start">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_product_product_one"
+                style="@style/Overlay.EditText.NoInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="@{model.areControlsEnabled}"
+                android:onClick="@{() -> model.pickProductOne()}"
+                android:text="@{model.productOne.title}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_product_product_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_top_button"
+            android:hint="@string/product_label_product_two"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_arrow_drop_down"
+            app:endIconTint="@color/ic_text_field"
+            app:layout_constraintBottom_toTopOf="@id/btn_product_order"
+            app:layout_constraintEnd_toEndOf="@id/gl_product_content_end"
+            app:layout_constraintStart_toStartOf="@id/gl_product_content_start">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_product_product_two"
+                style="@style/Overlay.EditText.NoInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="@{model.areControlsEnabled}"
+                android:onClick="@{() -> model.pickProductTwo()}"
+                android:text="@{AdaptersKt.label(model.productTwo)}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_product_order"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom_button"
+            android:enabled="@{model.areControlsEnabled}"
+            android:onClick="@{() -> model.order()}"
+            android:text="@string/product_order"
+            app:layout_constraintWidth_percent="@dimen/width_percent_button"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <include
+            android:id="@+id/v_product_loading_indicator"
+            layout="@layout/template_loading_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:isVisible="@{model.isLoadingIndicatorVisible()}"
+            app:layout_constraintBottom_toTopOf="@id/btn_product_order"
+            app:layout_constraintEnd_toEndOf="@id/gl_product_content_end"
+            app:layout_constraintStart_toStartOf="@id/gl_product_content_start"/>
+
+        <View
+            android:id="@+id/v_product_enlarged_images_bg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/black"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_product"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tl_product"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_product_content_end"
+            style="@style/Guideline.Vertical"
+            app:layout_constraintGuide_percent="@dimen/guide_percent_form_end"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_product_content_start"
+            style="@style/Guideline.Vertical"
+            app:layout_constraintGuide_percent="@dimen/guide_percent_form_start"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

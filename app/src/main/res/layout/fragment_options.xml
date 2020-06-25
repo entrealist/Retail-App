@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.main.options.OptionsFragment"
+    tools:ignore="ContentDescription">
+
+    <data>
+        <variable
+            name="model"
+            type="com.drugstore.app.main.options.OptionsVM" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/sv_options"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:colorBackground"
+        android:scrollbars="none"
+        android:fillViewport="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/v_options_profile"
+                layout="@layout/template_menu_item"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_options_item"
+                android:layout_marginTop="@dimen/grid_1"
+                app:icon="@{@drawable/ic_person_outline}"
+                app:iconTint="@{@color/ic_options_item}"
+                app:title="@{@string/options_label_profile}"
+                app:onClick="@{() -> model.profile()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/v_options_settings"
+                layout="@layout/template_menu_item"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_options_item"
+                android:layout_marginTop="@dimen/grid_1"
+                app:icon="@{@drawable/ic_settings}"
+                app:iconTint="@{@color/ic_options_item}"
+                app:title="@{@string/options_label_settings}"
+                app:onClick="@{() -> model.settings()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_options_profile" />
+
+            <include
+                android:id="@+id/v_options_terms_and_conditions"
+                layout="@layout/template_menu_item"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_options_item"
+                android:layout_marginTop="@dimen/grid_1"
+                app:icon="@{@drawable/ic_assignment}"
+                app:iconTint="@{@color/ic_options_item}"
+                app:title="@{@string/options_label_terms_and_conditions}"
+                app:onClick="@{() -> model.termsAndConditions()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_options_settings" />
+
+            <include
+                android:id="@+id/v_options_privacy_policy"
+                layout="@layout/template_menu_item"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_options_item"
+                android:layout_marginTop="@dimen/grid_1"
+                app:icon="@{@drawable/ic_lock}"
+                app:iconTint="@{@color/ic_options_item}"
+                app:title="@{@string/options_label_privacy_policy}"
+                app:onClick="@{() -> model.privacyPolicy()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_options_terms_and_conditions" />
+
+            <include
+                android:id="@+id/v_options_contact_us"
+                layout="@layout/template_menu_item"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_options_item"
+                android:layout_marginTop="@dimen/grid_1"
+                app:icon="@{@drawable/ic_phone}"
+                app:iconTint="@{@color/ic_options_item}"
+                app:title="@{@string/options_label_contact_us}"
+                app:onClick="@{() -> model.contactUs()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_options_privacy_policy" />
+
+            <include
+                android:id="@+id/v_options_logout"
+                layout="@layout/template_menu_item"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_options_item"
+                android:layout_marginTop="@dimen/grid_1"
+                app:icon="@{@drawable/ic_logout}"
+                app:iconTint="@{@color/ic_options_item}"
+                app:title="@{@string/options_label_logout}"
+                app:onClick="@{() -> model.logout()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_options_contact_us" />
+
+
+            <include
+                android:id="@+id/v_options_loading_indicator"
+                layout="@layout/template_loading_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:isVisible="@{model.isLoadingIndicatorVisible()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

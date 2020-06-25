@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".app.main.orders.OrdersFragment"
+    tools:ignore="ContentDescription">
+
+    <data>
+        <import type="com.kasprov.android.core.BooleanKt" />
+        <import type="com.drugstore.app.core.AppAdapters" />
+        <import type="com.drugstore.app.main.orders.AdaptersKt" />
+        <variable
+            name="item"
+            type="com.drugstore.domain.entity.OrderDomain" />
+        <variable
+            name="model"
+            type="com.drugstore.app.main.orders.OrdersVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/grid_1"
+        android:paddingEnd="@dimen/grid_2"
+        android:paddingStart="@dimen/grid_2"
+        android:paddingTop="@dimen/grid_1_5"
+        tools:theme="@style/ThemeOverlay.Orders">
+
+        <ImageView
+            android:id="@+id/iv_order_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:bind_imageUri="@{item.order.imageUri}"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintBottom_toTopOf="@id/sp_order_footer_top"
+            app:layout_constraintEnd_toEndOf="@id/gl_order_column_1_end"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/bg_launch" />
+
+        <TextView
+            android:id="@+id/tv_order_title"
+            style="@style/title_h5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.products[0].title}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@id/tv_order_total_amount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/sp_order_column_2_start"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Epiduo Gel 0.1%/2.5%" />
+
+        <TextView
+            android:id="@+id/tv_order_total_amount"
+            style="@style/price_shopping_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_1"
+            android:text="@{item.products[0].amountString}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@id/tv_order_order_id"
+            app:layout_constraintEnd_toStartOf="@id/tv_order_quantity"
+            app:layout_constraintStart_toStartOf="@id/sp_order_column_2_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_title"
+            tools:text="€ 799.00" />
+        <TextView
+            android:id="@+id/tv_order_quantity"
+            style="@style/info_text_regular12px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_0_5"
+            android:text="@{@string/order_format_order_quantity(item.products[0].quantityString)}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_order_total_amount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_order_total_amount"
+            tools:text="(2 pcs)" />
+
+        <TextView
+            android:id="@+id/tv_order_label_order_id"
+            style="@style/info_text_regular12px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_label_order_id"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_order_order_id"
+            app:layout_constraintStart_toStartOf="@id/sp_order_column_2_start" />
+        <TextView
+            android:id="@+id/tv_order_order_id"
+            style="@style/regular_text_regular12px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_0_5"
+            android:layout_marginTop="@dimen/grid_1"
+            android:text="@{item.order.hashId}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintBottom_toTopOf="@id/tv_order_order_date_time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_order_label_order_id"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_total_amount"
+            tools:text="BL17OUV" />
+
+        <TextView
+            android:id="@+id/tv_order_label_order_date_time"
+            style="@style/info_text_regular12px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_label_order_date_time"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_order_order_date_time"
+            app:layout_constraintStart_toStartOf="@id/sp_order_column_2_start" />
+        <TextView
+            android:id="@+id/tv_order_order_date_time"
+            style="@style/regular_text_regular12px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_0_5"
+            android:layout_marginTop="@dimen/grid_0_5"
+            android:text="@{AppAdapters.dateTime1(item.order.orderDateTime)}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintBottom_toTopOf="@id/tv_order_status"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_order_label_order_date_time"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_order_id"
+            tools:text="17/12/18 at 18:03" />
+
+        <TextView
+            android:id="@+id/tv_order_label_status"
+            style="@style/info_text_regular12px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_label_status"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_order_status"
+            app:layout_constraintStart_toStartOf="@id/sp_order_column_2_start" />
+        <TextView
+            android:id="@+id/tv_order_status"
+            style="@style/status_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_0_5"
+            android:layout_marginTop="@dimen/grid_0_5"
+            android:text="@{item.order.statusTitle}"
+            android:textColor="@{AdaptersKt.statusColor(context, item.order.statusId)}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintBottom_toTopOf="@id/tv_order_shipping_date_time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_order_label_status"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_order_date_time"
+            tools:text="Shipped" />
+
+        <TextView
+            android:id="@+id/tv_order_label_shipping_date_time"
+            style="@style/info_text_regular12px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_label_shipping_date_time"
+            android:visibility="@{BooleanKt.visibleElseGone(item.order.shippingDateTime != null)}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_order_shipping_date_time"
+            app:layout_constraintStart_toStartOf="@id/sp_order_column_2_start" />
+        <TextView
+            android:id="@+id/tv_order_shipping_date_time"
+            style="@style/regular_text_regular12px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_0_5"
+            android:layout_marginTop="@dimen/grid_0_5"
+            android:text="@{AppAdapters.dateTime1(item.order.shippingDateTime)}"
+            android:visibility="@{BooleanKt.visibleElseGone(item.order.shippingDateTime != null)}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintBottom_toTopOf="@id/tv_order_label_shipping_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_order_label_shipping_date_time"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_status"
+            tools:text="17/12/18 at 18:03" />
+
+        <TextView
+            android:id="@+id/tv_order_label_shipping_id"
+            style="@style/info_text_regular12px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_0_5"
+            android:text="@string/order_label_shipping_id"
+            android:visibility="@{BooleanKt.visibleElseGone(item.order.shippingId != null)}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintBottom_toTopOf="@id/tv_order_shipping_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/sp_order_column_2_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_shipping_date_time"/>
+        <TextView
+            android:id="@+id/tv_order_shipping_id"
+            style="@style/link_main12px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.order.shippingId}"
+            android:visibility="@{BooleanKt.visibleElseGone(item.order.shippingId != null)}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintBottom_toBottomOf="@id/sp_order_footer_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/sp_order_column_2_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_label_shipping_id"
+            tools:text="6F12V2L87329746318" />
+
+        <Button
+            android:id="@+id/btn_order_prescription"
+            style="?borderlessIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> model.prescription(item)}"
+            app:icon="@drawable/ic_questionnaire_details"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_order_reorder_same"
+            app:layout_constraintEnd_toStartOf="@id/btn_order_details"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_order_reorder_same" />
+        <Button
+            android:id="@+id/btn_order_details"
+            style="?borderlessIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> model.details(item)}"
+            app:icon="@drawable/ic_order_details"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_order_reorder_same"
+            app:layout_constraintEnd_toStartOf="@id/gl_order_column_1_end"
+            app:layout_constraintStart_toEndOf="@id/btn_order_prescription"
+            app:layout_constraintTop_toTopOf="@id/btn_order_reorder_same" />
+
+        <Button
+            android:id="@+id/btn_order_reorder_other"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> model.reorderOther(item)}"
+            android:text="@string/order_reorder_other"
+            android:visibility='@{BooleanKt.visibleElseGone(item.reorderPossible)}'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/sp_order_column_2_start"
+            app:layout_constraintBottom_toTopOf="@id/btn_order_reorder_same" />
+
+        <Button
+            android:id="@+id/btn_order_reorder_same"
+            style="?materialButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> model.reorderSame(item)}"
+            android:text="@string/order_reorder_same"
+            android:visibility='@{BooleanKt.visibleElseInvisible(item.reorderPossible)}'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/sp_order_column_2_start"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        <Space
+            android:id="@+id/sp_order_footer_top"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/grid_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_order_reorder_other" />
+        <Space
+            android:id="@+id/sp_order_column_2_start"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/grid_2"
+            app:layout_constraintStart_toStartOf="@id/gl_order_column_1_end"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_order_column_1_end"
+            style="@style/Guideline.Vertical"
+            app:layout_constraintGuide_percent="@dimen/guide_percent_orders_first_column"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

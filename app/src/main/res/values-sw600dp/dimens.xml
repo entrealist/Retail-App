@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        <WHAT>_<WHERE>_<DESCRIPTION>
+        <WHAT>: textSize, size, width, height, width_percent, height_percent, guide_percent, etc.
+        <WHERE>: widget name - button, switch, textInputLayout, etc.
+        <DESCRIPTION>: context name (login, profile), detail name (avatar, promo), state name (disabled)
+    -->
+
+    <!-- Generated -->
+    <dimen name="title_h5">18dp</dimen>
+
+    <!-- Other -->
+    <dimen name="guide_percent_form_end">0.975</dimen>
+    <dimen name="guide_percent_form_start">0.025</dimen>
+</resources>

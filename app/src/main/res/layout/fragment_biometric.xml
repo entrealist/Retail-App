@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".app.main.options.settings.biometric.BiometricFragment"
+    tools:ignore="ContentDescription">
+
+    <data>
+        <import type="com.kasprov.android.core.BooleanKt" />
+        <variable
+            name="model"
+            type="com.drugstore.app.main.options.settings.biometric.BiometricVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:colorBackground">
+
+        <ImageView
+            android:id="@+id/iv_biometric"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_4"
+            android:src="@drawable/ic_lock"
+            android:tint="@color/ic_biometric"
+            app:layout_constraintEnd_toEndOf="@id/gl_biometric_content_end"
+            app:layout_constraintStart_toStartOf="@id/gl_biometric_content_start"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_biometric_title"
+            style="@style/title_h2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_1"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="@id/gl_biometric_content_end"
+            app:layout_constraintStart_toStartOf="@id/gl_biometric_content_start"
+            app:layout_constraintTop_toBottomOf="@id/iv_biometric" />
+
+        <androidx.constraintlayout.widget.Group
+            style="@style/Helper"
+            android:visibility="@{BooleanKt.goneElseVisible(model.isBiometricAuthenticationEnabled())}"
+            app:constraint_referenced_ids="tv_biometric_disabled_info,til_biometric_disabled_password,btn_biometric_disabled_enable"
+            tools:visibility="gone" />
+        <TextView
+            android:id="@+id/tv_biometric_disabled_info"
+            style="@style/info_text_regular13px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_0_5"
+            android:text="@string/biometric_disabled_info"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="@id/gl_biometric_content_end"
+            app:layout_constraintStart_toStartOf="@id/gl_biometric_content_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_biometric_title" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_biometric_disabled_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_4"
+            android:hint="@string/biometric_disabled_label_password"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="@id/gl_biometric_content_end"
+            app:layout_constraintStart_toStartOf="@id/gl_biometric_content_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_biometric_disabled_info">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_biometric_disabled_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="@{model.areControlsEnabled}"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:text="@={model.password}" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/btn_biometric_disabled_enable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_button"
+            android:enabled="@{model.areControlsEnabled}"
+            android:onClick="@{() -> model.enable()}"
+            android:text="@string/biometric_disabled_enable"
+            app:layout_constraintWidth_percent="@dimen/width_percent_button"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_biometric_disabled_password"/>
+        <TextView
+            android:id="@+id/tv_biometric_disabled_error"
+            style="@style/regular_text_error12px_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_3"
+            android:text="@{model.biometricAuthenticationError}"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="@id/gl_biometric_content_end"
+            app:layout_constraintStart_toStartOf="@id/gl_biometric_content_start"
+            app:layout_constraintTop_toBottomOf="@id/btn_biometric_disabled_enable" />
+        <include
+            android:id="@+id/v_biometric_disabled_enable_loading_indicator"
+            layout="@layout/template_loading_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:isVisible="@{model.isLoadingIndicatorVisible()}"
+            app:layout_constraintTop_toBottomOf="@id/btn_biometric_disabled_enable"
+            app:layout_constraintEnd_toEndOf="@id/gl_biometric_content_end"
+            app:layout_constraintStart_toStartOf="@id/gl_biometric_content_start"/>
+
+
+        <androidx.constraintlayout.widget.Group
+            style="@style/Helper"
+            android:visibility="@{BooleanKt.visibleElseGone(model.isBiometricAuthenticationEnabled())}"
+            app:constraint_referenced_ids="btn_biometric_enabled_disable"
+            tools:visibility="visible" />
+        <Button
+            android:id="@+id/btn_biometric_enabled_disable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_button"
+            android:onClick="@{() -> model.disable()}"
+            android:text="@string/biometric_enabled_disable"
+            app:layout_constraintWidth_percent="@dimen/width_percent_button"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_biometric_title"/>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_biometric_content_end"
+            style="@style/Guideline.Vertical"
+            app:layout_constraintGuide_percent="@dimen/guide_percent_form_end"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_biometric_content_start"
+            style="@style/Guideline.Vertical"
+            app:layout_constraintGuide_percent="@dimen/guide_percent_form_start"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

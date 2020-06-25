@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        <WHAT>_<WHERE>_<DESCRIPTION>
+        <WHAT>: textSize, size, width, height, width_percent, height_percent, guide_percent, etc.
+        <WHERE>: widget name - button, switch, textInputLayout, etc.
+        <DESCRIPTION>: context name (login, profile), detail name (avatar, promo), state name (disabled)
+    -->
+
+    <!-- ProductsFragment -->
+    <dimen name="width_percent_products_image">0.09</dimen>
+
+
+    <!-- OrdersFragment -->
+    <dimen name="guide_percent_orders_first_column">0.16</dimen>
+
+
+    <!-- ProfileFragment -->
+    <dimen name="width_percent_profile_avatar">0.09</dimen>
+</resources>

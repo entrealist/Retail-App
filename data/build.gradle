@@ -1,0 +1,92 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        buildConfigField 'int', 'APP_DATABASE_VERSION', '1'
+        buildConfigField 'String', 'AUTH_HEADER_NAME', "\"X-Doktorabc-Auth\""
+        buildConfigField 'String', 'LOCALE_HEADER_NAME', "\"X-Doktorabc-Locale\""
+    }
+
+    flavorDimensions "environment"
+    productFlavors {
+        stage {
+            dimension "environment"
+
+            buildConfigField 'String', 'API_BASE_URL', "\"https://api.doktor-abc.com/v1/\""
+            buildConfigField 'String', 'MEDIA_BASE_URL', "\"https://www.doktor-abc.tk\""
+            buildConfigField 'java.util.Map<String, String>', 'API_HEADERS', '''new java.util.HashMap<String, String>() {{
+                put(\"Authorization\", \"Basic example==\");
+                put(\"accept\", \"application/json\");
+                put(\"Content-Type\", \"application/json\");
+                put(\"X-Doktorabc-Client\", \"example\");
+            }}'''
+            buildConfigField 'java.util.Map<String, String>', 'FRONT_HEADERS', '''new java.util.HashMap<String, String>() {{
+                put(\"Authorization\", \"Basic example==\");
+            }}'''
+        }
+        production {
+            dimension "environment"
+
+            buildConfigField 'String', 'API_BASE_URL', "\"https://api.doktorabc.com/v1/\""
+            buildConfigField 'String', 'MEDIA_BASE_URL', "\"https://www.doktorabc.com\""
+            buildConfigField 'java.util.Map<String, String>', 'API_HEADERS', '''new java.util.HashMap<String, String>() {{
+                put(\"accept\", \"application/json\");
+                put(\"Content-Type\", \"application/json\");
+                put(\"X-Doktorabc-Client\", \"example\");
+            }}'''
+            buildConfigField 'java.util.Map<String, String>', 'FRONT_HEADERS', '''new java.util.HashMap<String, String>() {{
+            }}'''
+        }
+    }
+
+    buildTypes {
+        all {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    kotlinOptions.jvmTarget = "1.8"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':domain')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlinVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutinesVersion"
+
+    implementation "com.google.dagger:hilt-android:$rootProject.daggerHiltVersion"
+    kapt "com.google.dagger:hilt-android-compiler:$rootProject.daggerHiltVersion"
+
+    implementation "androidx.lifecycle:lifecycle-livedata:$rootProject.lifecycleVersion"
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    api "androidx.room:room-ktx:$rootProject.roomVersion"
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+
+    api "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    api "com.squareup.okhttp3:okhttp:$rootProject.okHttpVersion"
+    api "com.squareup.moshi:moshi:$rootProject.moshiVersion"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$rootProject.moshiVersion"
+    api "com.squareup.retrofit2:converter-moshi:$rootProject.retrofitVersion"
+    debugApi "com.readystatesoftware.chuck:library:$rootProject.chuckVersion"
+    releaseApi "com.readystatesoftware.chuck:library-no-op:$rootProject.chuckVersion"
+
+    implementation "com.jakewharton.threetenabp:threetenabp:$rootProject.threeTenABPVersion"
+}
+
+kapt {
+    correctErrorTypes true
+}

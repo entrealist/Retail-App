@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        <WHAT>_<WHERE>_<DESCRIPTION>
+        <WHAT>: fg (foreground), bg (background), ic (icon), textColor (text color), special theme color names
+        <WHERE>: widget name - button, switch, textInputLayout, etc.
+        <DESCRIPTION>: context name (categories), detail name (image), state name (disabled)
+
+        Naming examples:
+        • fg_categories_image: <WHAT> - fg (foreground), <WHERE> - (not specified), <DESCRIPTION> - categories context, image detail
+        • colorPrimary_button_profile_menu: <WHAT> - colorPrimary, <WHERE> - button, <DESCRIPTION> - profile context, menu detail
+    -->
+
+    <!-- Colors -->
+    <color name="colorPrimary">#115E78</color>
+    <!-- Other theme colors -->
+    <color name="colorControlHighlight">#DFF5FF</color>
+    <color name="textColorLink">@color/link_main12px_left</color>
+
+    <!-- Widget styles -->
+    <!-- BottomNavigationView -->
+    <color name="colorPrimary_bottomNavigationView">@color/bottom_navigation_active</color>
+    <color name="colorSurface_bottomNavigationView">#F5F6F7</color>
+    <color name="colorOnSurface_bottomNavigationView">@color/bottom_navigation_inactive</color>
+    <!-- Button -->
+    <color name="colorPrimary_button">#25A4CF</color>
+    <color name="colorOnPrimary_button">@color/button_big_main</color>
+    <color name="colorOnSurface_button">@color/color_on_surface_button</color>
+    <!-- TextButton -->
+    <color name="colorPrimary_textButton">@color/link_regular</color>
+    <!-- TextButton Icon -->
+    <color name="iconTint_textButton_icon">#25A4CF</color>
+    <!-- OutlinedButton -->
+    <color name="strokeColor_outlinedButton">#25A4CF</color>
+    <color name="colorPrimary_outlinedButton">@color/button_middle_secondary</color>
+    <!-- Switch -->
+    <color name="colorControlActivated_switch">#46C853</color>
+    <color name="colorSurface_switch">#F1F1F1</color>
+    <color name="colorOnSurface_switch">#605d5d</color>
+    <!-- TextInputLayout -->
+    <color name="colorPrimary_textInputLayout">#D2DCE2</color>
+    <color name="colorError_textInputLayout">@color/regular_text_error12px_left</color>
+    <color name="colorOnSurface_textInputLayout">#D2DCE2</color>
+    <color name="hintTextColor_textInputLayout">@color/form_label</color>
+    <color name="textColorHint_textInputLayout">@color/form_label</color>
+    <color name="textColor_textInputEditText">@color/form_text</color>
+    <color name="textColor_textInputEditText_disabled">@color/form_text_unable</color>
+    <!-- Toolbar -->
+    <color name="colorPrimary_toolbar">#F5F6F7</color>
+    <color name="colorOnPrimary_toolbar">@color/title_header_and_alert</color>
+    <color name="colorControlNormal_toolbar">#25A4CF</color>
+    <color name="iconTint_toolbar">#25A4CF</color>
+    <!-- ProgressBar Horizontal -->
+    <color name="colorAccent_progressBar_horizontal">#25A4CF</color>
+
+    <!-- Dialog themes -->
+    <!-- AlertDialog -->
+    <color name="colorPrimary_alertDialog">@color/link_regular</color>
+    <color name="colorSurface_alertDialog">@android:color/white</color>
+    <color name="colorControlNormal_alertDialog">#A1BAC9</color>
+    <color name="colorControlActivated_alertDialog">#25A4CF</color>
+    <color name="textColor_alertDialog_title">@color/title_header_and_alert</color>
+    <color name="textColor_alertDialog_body">@color/info_text_regular16px_left</color>
+    <!-- DatePickerDialog -->
+    <color name="colorPrimary_datePickerDialog">#25A4CF</color>
+    <color name="colorAccent_datePickerDialog">#63BDDB</color>
+
+    <!-- Other -->
+    <color name="statusBarColor_light">@color/translucent</color>
+    <color name="navigationBarColor_light">@color/translucent</color>
+    <color name="bg_div">#D2DCE2</color>
+    <color name="ic_text_field">#25A4CF</color>
+    <color name="bg_progressBar">#FAFAFA</color>
+    <color name="indeterminateTint_progressBar">#25A4CF</color>
+
+
+    <!-- CategoriesFragment -->
+    <color name="fg_category_image">#99464646</color>
+
+    <!-- ProductFragment -->
+    <color name="colorPrimary_tabLayout_product">#A1BAC9</color>
+    <color name="ic_product_shipping">#6DA6B4</color>
+
+
+    <!-- OptionsFragment -->
+    <color name="ic_options_item">#9CA0A5</color>
+
+    <!-- ProfileFragment -->
+    <color name="bg_profile_info">#F5F6F7</color>
+    <color name="ic_profile_avatar_placeholder">#63BDDB</color>
+    <color name="ic_profile_item">#A1BAC9</color>
+
+    <!-- AddressesFragment -->
+    <color name="bg_addresses_on_swipe_delete">#E54C4C</color>
+    <color name="ic_addresses_on_swipe_delete">@android:color/white</color>
+    <color name="ic_addresses_add_address">#25A4CF</color>
+    <color name="ic_address_edit">#A1BAC9</color>
+
+    <!-- SettingsFragment -->
+    <color name="ic_settings_item">#9CA0A5</color>
+
+    <!-- RegionFragment -->
+    <color name="ic_region_selected">#25A4CF</color>
+
+    <!-- BiometricFragment -->
+    <color name="ic_biometric">#A1BAC9</color>
+
+    <!-- ContactUsFragment -->
+    <color name="ic_contact_us_contact_detail">#9CA0A5</color>
+
+
+    <!-- LoginFragment -->
+    <!-- LoginFragment Button -->
+    <color name="colorPrimary_button_login">@android:color/white</color>
+    <color name="colorOnPrimary_button_login">@color/button_big_secondary</color>
+    <color name="colorOnSurface_button_login">@color/color_on_surface_button</color>
+    <!-- LoginFragment TextButton -->
+    <color name="colorPrimary_textButton_login">@color/link_additional15px_center</color>
+    <color name="colorOnSurface_textButton_login">@color/color_on_surface15px_center</color>
+    <!-- LoginFragment TextButton Icon -->
+    <color name="iconTint_textButton_icon_login">@android:color/white</color>
+    <!-- LoginFragment TextInputLayout -->
+    <color name="colorPrimary_textInputLayout_login">#69A6B5</color>
+    <color name="colorError_textInputLayout_login">@color/regular_text_error_first12px_left</color>
+    <color name="colorOnSurface_textInputLayout_login">#69A6B5</color>
+    <color name="hintTextColor_textInputLayout_login">@color/form_label_main_page</color>
+    <color name="textColorHint_textInputLayout_login">@color/form_label_main_page</color>
+    <color name="textColor_textInputEditText_login">@color/form_text_main</color>
+    <color name="textColor_textInputEditText_login_disabled">@color/form_text_disabled_first_screen</color>
+</resources>
